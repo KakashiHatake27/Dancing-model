@@ -6,11 +6,11 @@ import React, { useEffect, useRef } from "react";
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 
 export function Avatar(props) {
-    const group = useRef();
+const group = useRef();
   const { nodes, materials } = useGLTF("models/me.glb");
 
-const {animations: dancingAnimation} = useFBX("animations/Dancing.fbx");
-console.log(dancingAnimation);
+const {animations: dancingAnimation }  = useFBX("animations/Dancing.fbx");
+// console.log(typingAnimation);
 
 dancingAnimation[0].name = "Dancing";
 const { actions } = useAnimations(dancingAnimation, group);
@@ -21,7 +21,7 @@ useEffect(() => {
 
   return (
     <group>
-    <group {...props} dispose={null}>
+    <group {...props} ref= {group} dispose={null}>
       <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
@@ -86,4 +86,3 @@ useEffect(() => {
 }
 
 useGLTF.preload("models/me.glb");
-
