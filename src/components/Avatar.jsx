@@ -15,6 +15,14 @@ export function Avatar(props) {
     dancingAnimation[0].name = "Dancing";
     const { actions } = useAnimations(dancingAnimation, group);
 
+
+    useFrame((state) => {
+        group.current.getObjectByName("Head").lookAt(state.camera.position);
+    })
+    
+    
+
+    
     useEffect(() => {
         actions["Dancing"].reset().play();
     }, [])
