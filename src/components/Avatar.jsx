@@ -15,6 +15,7 @@ export function Avatar(props) {
 
     dancingAnimation[0].name = "Dancing";
     const { actions } = useAnimations(dancingAnimation, group);
+<<<<<<< HEAD
 
 
     useFrame((state) => {
@@ -24,6 +25,9 @@ export function Avatar(props) {
     
 
 
+=======
+    
+>>>>>>> 6f2bdf98871cfab782d0db156b294ae66942de34
     useEffect(() => {
         actions["Dancing"].reset().play();
     }, [])
