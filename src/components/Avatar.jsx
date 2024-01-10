@@ -10,7 +10,7 @@ export function Avatar(props) {
     const group = useRef();
     const { nodes, materials } = useGLTF("models/me.glb");
 
-    const { animations: dancingAnimation } = useFBX("animations/Dancing.fbx");
+    const { animations: dancingAnimation } = useFBX("animations/Ground.fbx");
     // console.log(typingAnimation);
 
     dancingAnimation[0].name = "Dancing";
@@ -18,7 +18,7 @@ export function Avatar(props) {
 
 
     useFrame((state) => {
-        group.current.getObjectByName("Head").lookAt(state.camera.position);
+        // group.current.getObjectByName("Head").lookAt(state.camera.position);
     })
     
     
