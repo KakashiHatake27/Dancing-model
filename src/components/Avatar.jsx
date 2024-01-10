@@ -15,7 +15,6 @@ export function Avatar(props) {
 
     dancingAnimation[0].name = "Dancing";
     const { actions } = useAnimations(dancingAnimation, group);
-    
     useEffect(() => {
         actions["Dancing"].reset().play();
     }, [])
